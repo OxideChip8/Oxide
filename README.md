@@ -1,4 +1,28 @@
+
+<h1 align="center">
+  <br>
+  <a><img src="images/Chip8.png" width="220"></a>
+  <br>
+  <b>Nova</b>
+  <br>
+</h1>
+
 Nova is a modular CHIP-8 emulator written in Rust with an egui/eframe interface, multilingual support, debugging tools, and configurable input/video/audio settings.
+It is compatible with Windows, macOS, and Linux.
+
+<h1 align="center">
+  <a><img src="images/W11.png" width="150"></a>
+  &nbsp;&nbsp;&nbsp;
+  <a><img src="images/Linux.png" width="140"></a>
+  &nbsp;&nbsp;&nbsp;
+  <a><img src="images/Tahoe.png" width="150"></a>
+  <br><br>
+  <img src="https://img.shields.io/github/downloads/mewzers/Nova/total" width="140">
+</h1>
+
+
+
+
 
 |                    Tetris                    |                    Pong                    |
 | :------------------------------------------: | :----------------------------------------: |
