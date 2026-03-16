@@ -21,9 +21,10 @@ It is compatible with Windows, macOS, and Linux.
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <sub>macOS</sub>
   <br><br>
-  <img src="https://img.shields.io/github/downloads/mewzers/Nova/total" width="160">
+  <a href="https://github.com/mewzers/Nova/releases/latest">
+    <img src="https://img.shields.io/github/downloads/mewzers/Nova/total" width="160">
+  </a>
 </h1>
-
 
 
 |                    Tetris                    |                    Pong                    |
