@@ -7,7 +7,6 @@
 Nova is a modular CHIP-8 emulator written in Rust with an egui/eframe interface, multilingual support, debugging tools, and configurable input/video/audio settings.
 It is compatible with Windows, macOS, and Linux.
 <h1 align="center">
-  <br>
   <a href="https://github.com/mewzers/Nova/releases"><img src="images/W11.png" width="150"></a>
   <a href="https://github.com/mewzers/Nova/releases"><img src="images/Linux.png" width="140"></a>
   <a href="https://github.com/mewzers/Nova/releases"><img src="images/Tahoe.png" width="150"></a>
