@@ -9,18 +9,18 @@ It is compatible with Windows, macOS, and Linux.
 
 
 <h1 align="left">
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
   <a href="https://github.com/mewzers/Nova/releases"><img src="images/W11.png" width="150"></a>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <br>
+  <a href="https://github.com/mewzers/Nova/releases"></a>Windows 11
+
   <a href="https://github.com/mewzers/Nova/releases"><img src="images/Linux.png" width="140"></a>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <br>
+  <a href="https://github.com/mewzers/Nova/releases"></a>Linux
+
   <a href="https://github.com/mewzers/Nova/releases"><img src="images/Tahoe.png" width="150"></a>
   <br>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <a href="https://github.com/mewzers/Nova/releases"></a>Windows 11
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <a href="https://github.com/mewzers/Nova/releases"></a>Linux
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   
   <a href="https://github.com/mewzers/Nova/releases"></a>macOS
   <br><br>
 
