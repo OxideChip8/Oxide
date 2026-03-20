@@ -1,6 +1,6 @@
 
 <h1 align="center">
-  <b>Oxide - Chip8</b>
+  <b>Oxide</b>
   <br>
   <sub>A modern CHIP-8 emulator written in Rust<sub>
   <br>
