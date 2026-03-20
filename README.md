@@ -138,4 +138,4 @@ All bindings are fully configurable in **Settings → Controls**.
 
 <h1 align="left">License :</h1>
 
-[MIT](https://github.com/licences)
+[MIT](https://github.com/OxideChip8/Oxide?tab=MIT-1-ov-file)
