@@ -13,7 +13,7 @@
   <br>
   
   <a href="https://github.com/OxideChip8/Oxide/milestones">
-    <img src="https://img.shields.io/badge/Current progress-%25-magenta" width="222">
+    <img src="https://img.shields.io/badge/Current progress-%25-fffeb5" width="222">
   </a>
   <a href="https://github.com/OxideChip8/Oxide/releases">
     <img src="https://img.shields.io/github/v/release/OxideChip8/Oxide" width="185">
@@ -21,7 +21,7 @@
   <a href="https://github.com/OxideChip8/Oxide/releases/latest">
     <img src="https://img.shields.io/github/downloads/OxideChip8/Oxide/total?color=45E600" width="160">
   </a>
-  <img src="https://img.shields.io/badge/Rust-100%25-red" width="145">
+  <img src="https://img.shields.io/badge/Rust-100%25-ff6758" width="145">
 </h1>
 
 ### Oxide is a modular CHIP-8 emulator written in Rust with an egui/eframe interface, multilingual support, debugging tools, and configurable input/video/audio settings.
