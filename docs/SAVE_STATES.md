@@ -4,6 +4,13 @@ This document describes how Oxide persists user configuration, save states, and 
 
 ## Two persistence layers
 
+```mermaid
+flowchart LR
+    A[User settings] --> B[eframe::Storage]
+    C[ROM-specific save states] --> D[.state files under savestates/]
+    E[Runtime logs] --> F[logs/app and logs/emulator]
+```
+
 Oxide currently uses two distinct persistence mechanisms:
 
 1. UI/application settings via `eframe::Storage`
@@ -96,6 +103,21 @@ Only one current file per slot is retained; older slot files are replaced.
 
 ## Save flow
 
+```mermaid
+flowchart TD
+    A[User triggers save] --> B{ROM loaded?}
+    B -- No --> C[Reject save]
+    B -- Yes --> D{Manual save and slot occupied?}
+    D -- Yes --> E[Ask overwrite confirmation]
+    E --> F[Proceed on confirm]
+    D -- No --> F
+    F --> G[Clone CPU, Display, memory]
+    G --> H[Build PersistedSaveState]
+    H --> I[Write slot file to disk]
+    I --> J[Update in-memory slot cache and metadata]
+    J --> K[Show status / overlay]
+```
+
 When saving a slot:
 
 1. The app verifies that a ROM is loaded.
@@ -108,6 +130,19 @@ When saving a slot:
 Shortcuts bypass the overwrite dialog; manual saves can require confirmation.
 
 ## Load flow
+
+```mermaid
+flowchart TD
+    A[User triggers load] --> B{Slot exists in memory?}
+    B -- No --> C[Show empty slot message]
+    B -- Yes --> D[Restore CPU and Display]
+    D --> E{Snapshot memory valid?}
+    E -- Yes --> F[Restore memory]
+    E -- No --> G[Fallback: reload ROM]
+    F --> H[Reset accumulators]
+    G --> H
+    H --> I[Resume emulation]
+```
 
 When loading a slot:
 

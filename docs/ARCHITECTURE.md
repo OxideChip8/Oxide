@@ -4,6 +4,35 @@ This document describes the current crate layout, the main runtime data structur
 
 ## High-level layout
 
+```mermaid
+flowchart TD
+    main[main.rs]
+    app[app.rs]
+    cpu[cpu.rs]
+    display[display.rs]
+    keypad[keypad.rs]
+    audio[audio.rs]
+    gamepad[gamepad.rs]
+    i18n[i18n.rs]
+    debug[debug.rs]
+    types[types.rs]
+    utils[utils.rs]
+    ui[ui/*]
+
+    main --> app
+    main --> debug
+    main --> ui
+    app --> cpu
+    app --> display
+    app --> keypad
+    app --> audio
+    app --> gamepad
+    app --> i18n
+    app --> types
+    app --> utils
+    app --> ui
+```
+
 Main modules:
 
 - `src/main.rs`: process entry point, window/bootstrap setup, splash initialization, Windows single-instance guard
@@ -72,6 +101,23 @@ Execution is quirk-aware via `CpuQuirks`.
 
 ## Startup flow
 
+```mermaid
+flowchart TD
+    A[Process start] --> B{Windows build?}
+    B -- Yes --> C[Acquire single-instance mutex]
+    B -- No --> D[Skip mutex]
+    C --> E[Log early debug message]
+    D --> E
+    E --> F[Build splash viewport]
+    F --> G[Load app icon]
+    G --> H[run_native]
+    H --> I[Restore persisted settings if available]
+    I --> J[Re-arm splash state]
+    J --> K[Reset runtime-only emulation state]
+    K --> L[Log terminal ready]
+    L --> M[Enter Oxide::update loop]
+```
+
 `main.rs` currently does the following:
 
 1. On Windows, acquire a named mutex to prevent multiple instances.
@@ -84,6 +130,28 @@ Execution is quirk-aware via `CpuQuirks`.
 8. Hand control to `Oxide::update()`.
 
 ## Frame loop
+
+```mermaid
+flowchart TD
+    A[Frame begin] --> B{Splash active?}
+    B -- Yes --> C[Render splash]
+    C --> D[Request repaint]
+    D --> Z[Return]
+    B -- No --> E[Handle pending file open]
+    E --> F[Sync viewport and fullscreen state]
+    F --> G[Handle global shortcuts]
+    G --> H[Update keypad from input sources]
+    H --> I[Run emulator step]
+    I --> J[Tick timers and audio]
+    J --> K[Seed terminal boot logs]
+    K --> L[Log config changes]
+    L --> M[Apply theme visuals]
+    M --> N[Render top bar / main panel / bottom bar]
+    N --> O[Render settings viewport if open]
+    O --> P[Render debug terminal if open]
+    P --> Q[Request repaint if needed]
+    Q --> Z
+```
 
 Every frame, `Oxide::update()` drives the app in this rough order:
 

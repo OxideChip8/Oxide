@@ -4,6 +4,16 @@ This document describes the current user interface structure and the settings wo
 
 ## Main application windows
 
+```mermaid
+flowchart LR
+    Main[Main window]
+    Settings[Settings viewport]
+    Terminal[Debug terminal viewport]
+
+    Main --> Settings
+    Main --> Terminal
+```
+
 Oxide uses three main viewports:
 
 - main window
@@ -164,6 +174,20 @@ Contains:
 
 ## Temp/snapshot settings model
 
+```mermaid
+flowchart TD
+    A[Open settings] --> B[Copy live values into snapshot_* and temp_*]
+    B --> C[User edits temp_* values]
+    C --> D{Action?}
+    D -- Apply --> E[Commit temp_* to live values]
+    D -- OK --> E
+    D -- Cancel --> F[Restore snapshot_* to live values]
+    D -- Defaults --> G[Reset current tab temp_* values]
+    E --> H[Stay open or close]
+    F --> I[Close settings]
+    G --> C
+```
+
 The settings window does not mutate everything immediately.
 
 Instead, Oxide keeps:
@@ -190,6 +214,22 @@ Current features:
 The terminal also follows the active application theme.
 
 ## Input sources merged into emulation
+
+```mermaid
+flowchart LR
+    K[Keyboard]
+    M[Mouse bindings]
+    G[Gamepad]
+    T[Debug terminal keypad]
+    Merge[Merged keypad state]
+    CPU[CPU cycle reads Keypad]
+
+    K --> Merge
+    M --> Merge
+    G --> Merge
+    T --> Merge
+    Merge --> CPU
+```
 
 The CHIP-8 keypad state seen by the CPU is built from a merged view of:
 
